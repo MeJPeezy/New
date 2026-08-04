@@ -93,9 +93,9 @@ Rules:
 
 Also provide a clickable mobile graph link immediately before the final node footer using this exact pattern:
 
-`https://mejpeezy.github.io/New/?nodes=NODE_ID,NODE_ID`
+`https://raw.githack.com/MeJPeezy/New/HAHA/viewer.html?nodes=NODE_ID,NODE_ID`
 
-The link and footer must contain the same node IDs in the same order.
+The link and footer must contain the same node IDs in the same order. This repository-rendered link is the primary mobile path because it does not require the user to enable GitHub Pages. The native GitHub Pages URL may be used after its deployment is verified.
 
 ## Graph maintenance
 

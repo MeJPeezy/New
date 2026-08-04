@@ -1,114 +1,63 @@
-# Graphify Live References for ChatGPT
+# Knowledge Graph Live
 
 A mobile-first knowledge-graph viewer that opens the exact nodes referenced by a ChatGPT answer.
 
-The repository follows Graphify's artifact model: a persistent `graph.json`, an interactive graph viewer, and explicit node-level provenance. The included graph is the current anchoring-safety graph generated from this project's sources.
-
-## Current repository status
+## Current status
 
 - Default branch: `HAHA`
 - Pull request #1: merged
 - Pull request #2: merged
-- No additional pull request needs to be merged.
-- The former feature branch `graphify-chatgpt-live` contains no unmerged work. If GitHub displays a **Compare & pull request** suggestion for it, that suggestion can be ignored.
+- Feature branch: synchronized with `HAHA`
+- Automatic Pages workflow: `.github/workflows/deploy-pages.yml`
+- Visible product name: **Knowledge Graph Live**
+- Current repository slug: `MeJPeezy/New`
+- Intended repository slug: `MeJPeezy/knowledge-graph-live`
 
-The command below clones the already-merged default branch:
+No pull request remains to be merged.
 
-```bash
-gh repo clone MeJPeezy/New
-```
+## Mobile viewer
 
-The command requires a shell with GitHub CLI installed. It cannot run directly inside ordinary Chrome on a phone. In a GitHub Codespace, cloud shell, or another environment with `gh`, it should clone branch `HAHA` automatically because `HAHA` is the repository's default branch.
-
-After cloning, verify with:
-
-```bash
-cd New
-git branch --show-current
-```
-
-Expected result:
-
-```text
-HAHA
-```
-
-## Primary environment: mobile browser
-
-The user does not have a conventional PC and uses ChatGPT through a mobile browser, sometimes in desktop-site mode.
-
-Chrome on mobile cannot load unpacked Chrome extensions, and desktop-site mode does not add desktop extension support. The extension files in this repository are therefore an optional desktop fallback—not the primary workflow.
-
-The primary workflow is a GitHub Pages-hosted graph viewer:
-
-```text
-https://mejpeezy.github.io/New/?nodes=M6,C4,K1,K3
-```
-
-The `nodes` query parameter identifies the nodes to highlight. The viewer also expands their immediate neighbors.
-
-## Mobile setup
-
-These steps can be completed from GitHub's mobile website:
-
-1. Confirm that pull request #2 shows **Merged**. This is already complete; do not create or merge another PR for the same branch.
-2. Open the repository on GitHub.
-3. Open **Settings**. On a narrow screen, this may be under the repository navigation dropdown.
-4. Open **Pages** under **Code and automation**.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Select branch **HAHA** and folder **/(root)**, then save.
-7. Open the published site shown by GitHub Pages.
-
-After Pages is active, the expected viewer address is:
+The current expected GitHub Pages address is:
 
 ```text
 https://mejpeezy.github.io/New/
 ```
 
-## ChatGPT project instructions
-
-Copy `PROJECT_INSTRUCTIONS.md` into this ChatGPT project's instructions.
-
-The instructions make graph use explicit and require each graph-grounded answer to end with:
-
-```text
-Graph nodes: [M6, C4, K1, K3]
-```
-
-For mobile use, the answer should also include a clickable link such as:
+A graph-grounded answer can open a highlighted subgraph through:
 
 ```text
 https://mejpeezy.github.io/New/?nodes=M6,C4,K1,K3
 ```
 
-Tapping the link opens the graph with those nodes already highlighted. This is reliable on mobile because it does not depend on browser extensions or DOM injection into ChatGPT.
+The viewer supports tap selection, drag-to-pan, pinch-to-zoom, search, fit, clear, and shareable node-highlight URLs.
+
+## Automatic deployment
+
+Every push to `HAHA` now triggers the official GitHub Pages workflow using:
+
+- `actions/checkout@v6`
+- `actions/configure-pages@v5`
+- `actions/upload-pages-artifact@v4`
+- `actions/deploy-pages@v4`
+
+The workflow has `pages: write` and `id-token: write` permissions and deploys the repository as a static Pages artifact.
+
+## ChatGPT project integration
+
+Copy `PROJECT_INSTRUCTIONS.md` into the ChatGPT Project instructions. Graph-grounded answers should include the mobile viewer link followed by:
+
+```text
+Graph nodes: [M6, C4, K1, K3]
+```
+
+## Environment
+
+The primary environment is a mobile browser. Desktop Chrome/Edge extension files remain in the repository only as an optional fallback. Chrome on Android or iOS cannot load unpacked desktop extensions.
 
 ## Authorized cybersecurity model
 
-The project instructions support real, working cybersecurity research against user-owned assets, explicitly consented targets, and legitimate in-scope bug-bounty assets. They do not force fake code or toy examples merely because the work is security-related.
+The project instructions support real cybersecurity research against user-owned assets, explicitly consented targets, and legitimate in-scope bug-bounty assets. Tooling should remain tied to the applicable ownership, written authorization, or published program scope.
 
-Target-specific testing should remain tied to the applicable ownership, written authorization, or published bug-bounty scope. Chat privacy alone is not target authorization.
+## Graphify interoperability
 
-## Graphify integration
-
-On a system capable of running Graphify:
-
-```bash
-uv tool install graphifyy
-graphify install --project --platform codex
-graphify .
-```
-
-Replace this repository's `graph.json` with the generated `graphify-out/graph.json`. The viewer accepts both this project's `edges` schema and Graphify's NetworkX-style `links` schema.
-
-A mobile-only user does not need to run these commands personally; the graph artifact can be generated through a hosted runner, GitHub Actions, another authorized machine, or supplied directly to the repository.
-
-## Optional desktop extension
-
-`manifest.json`, `content.js`, `content.css`, `viewer.html`, and `viewer.js` also form a Chrome/Edge extension for a desktop browser capable of loading unpacked extensions. It can dock the graph beside ChatGPT and automatically parse the `Graph nodes: [...]` footer.
-
-This extension is not expected to work in Chrome on Android or iOS.
-
-## Upstream
-
-Designed to interoperate with `Graphify-Labs/graphify` and its Apache-2.0 graph artifact conventions. This repository does not modify or redistribute Graphify source code.
+The viewer accepts both the included `edges` schema and Graphify's NetworkX-style `links` schema. Replace `graph.json` with a newly generated Graphify artifact when the project knowledge base changes.

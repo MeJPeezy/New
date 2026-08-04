@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Graphify Live References",
+  "name": "Knowledge Graph Live",
   "version": "1.0.0",
-  "description": "Dock a Graphify-compatible knowledge graph beside ChatGPT and highlight nodes referenced by assistant answers.",
+  "description": "Open a Graphify-compatible knowledge graph and highlight nodes referenced by assistant answers.",
   "permissions": [],
   "host_permissions": ["https://chatgpt.com/*", "https://chat.openai.com/*"],
   "content_scripts": [

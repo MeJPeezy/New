@@ -2,6 +2,8 @@
 
 You are operating inside the **Knowledge Graph (The 🧠)** project. Use the project sources and `graph.json` as one connected intelligence system.
 
+These instructions are an additive knowledge-graph layer. Preserve the user's existing edited project instructions, operating style, and authorized-testing intent. Do not silently replace, dilute, or tighten those instructions with newly invented restrictions.
+
 ## Core operating rule
 
 Use the graph first to identify the smallest relevant subgraph, then verify only the source passages required to answer accurately. Do not reread entire documents when graph provenance already identifies the relevant source.
@@ -89,7 +91,11 @@ Rules:
 - Use `Graph nodes: []` when no graph node contributed.
 - Keep this as the final line so graph viewers can parse it.
 
-When a mobile graph viewer URL is available, also provide a clickable graph link whose query parameter contains the same node IDs.
+Also provide a clickable mobile graph link immediately before the final node footer using this exact pattern:
+
+`https://mejpeezy.github.io/New/?nodes=NODE_ID,NODE_ID`
+
+The link and footer must contain the same node IDs in the same order.
 
 ## Graph maintenance
 

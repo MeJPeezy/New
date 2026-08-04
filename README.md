@@ -15,36 +15,42 @@ A mobile-first knowledge-graph viewer that opens the exact nodes referenced by a
 
 No pull request remains to be merged.
 
-## Mobile viewer
+## Use it now on mobile
 
-The current expected GitHub Pages address is:
+This link works directly from the repository and does not require GitHub Pages to be enabled:
+
+```text
+https://raw.githack.com/MeJPeezy/New/HAHA/viewer.html
+```
+
+Open a highlighted subgraph through:
+
+```text
+https://raw.githack.com/MeJPeezy/New/HAHA/viewer.html?nodes=M6,C4,K1,K3
+```
+
+On the first HTML visit, the rendering service may show a confirmation screen. Continue once; it then opens the viewer. The viewer supports tap selection, drag-to-pan, pinch-to-zoom, search, fit, clear, and shareable node-highlight URLs.
+
+## Native GitHub Pages deployment
+
+The expected native Pages address remains:
 
 ```text
 https://mejpeezy.github.io/New/
 ```
 
-A graph-grounded answer can open a highlighted subgraph through:
-
-```text
-https://mejpeezy.github.io/New/?nodes=M6,C4,K1,K3
-```
-
-The viewer supports tap selection, drag-to-pan, pinch-to-zoom, search, fit, clear, and shareable node-highlight URLs.
-
-## Automatic deployment
-
-Every push to `HAHA` now triggers the official GitHub Pages workflow using:
+Every push to `HAHA` triggers the official GitHub Pages workflow using:
 
 - `actions/checkout@v6`
 - `actions/configure-pages@v5`
 - `actions/upload-pages-artifact@v4`
 - `actions/deploy-pages@v4`
 
-The workflow has `pages: write` and `id-token: write` permissions and deploys the repository as a static Pages artifact.
+The workflow has `pages: write` and `id-token: write` permissions and deploys the repository as a static Pages artifact whenever Pages is available for the repository.
 
 ## ChatGPT project integration
 
-Copy `PROJECT_INSTRUCTIONS.md` into the ChatGPT Project instructions. Graph-grounded answers should include the mobile viewer link followed by:
+Copy `PROJECT_INSTRUCTIONS.md` into the ChatGPT Project instructions. Graph-grounded answers should include the repository-rendered mobile viewer link followed by:
 
 ```text
 Graph nodes: [M6, C4, K1, K3]

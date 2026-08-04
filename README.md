@@ -4,6 +4,35 @@ A mobile-first knowledge-graph viewer that opens the exact nodes referenced by a
 
 The repository follows Graphify's artifact model: a persistent `graph.json`, an interactive graph viewer, and explicit node-level provenance. The included graph is the current anchoring-safety graph generated from this project's sources.
 
+## Current repository status
+
+- Default branch: `HAHA`
+- Pull request #1: merged
+- Pull request #2: merged
+- No additional pull request needs to be merged.
+- The former feature branch `graphify-chatgpt-live` contains no unmerged work. If GitHub displays a **Compare & pull request** suggestion for it, that suggestion can be ignored.
+
+The command below clones the already-merged default branch:
+
+```bash
+gh repo clone MeJPeezy/New
+```
+
+The command requires a shell with GitHub CLI installed. It cannot run directly inside ordinary Chrome on a phone. In a GitHub Codespace, cloud shell, or another environment with `gh`, it should clone branch `HAHA` automatically because `HAHA` is the repository's default branch.
+
+After cloning, verify with:
+
+```bash
+cd New
+git branch --show-current
+```
+
+Expected result:
+
+```text
+HAHA
+```
+
 ## Primary environment: mobile browser
 
 The user does not have a conventional PC and uses ChatGPT through a mobile browser, sometimes in desktop-site mode.
@@ -22,7 +51,7 @@ The `nodes` query parameter identifies the nodes to highlight. The viewer also e
 
 These steps can be completed from GitHub's mobile website:
 
-1. Merge the `graphify-chatgpt-live` pull request into the repository's `HAHA` branch.
+1. Confirm that pull request #2 shows **Merged**. This is already complete; do not create or merge another PR for the same branch.
 2. Open the repository on GitHub.
 3. Open **Settings**. On a narrow screen, this may be under the repository navigation dropdown.
 4. Open **Pages** under **Code and automation**.
